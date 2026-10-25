@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Desafio GG PTC 26.2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFF1F6}
+a{color:#AD1457}a:hover{color:#6A0D35}
+@keyframes floatA{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(18px,-34px) rotate(8deg)}100%{transform:translate(0,0) rotate(0deg)}}
+@keyframes floatB{0%{transform:translate(0,0) rotate(0deg) scale(1)}50%{transform:translate(-26px,22px) rotate(-10deg) scale(1.05)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}
+@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.blob-a{animation:floatA 11s ease-in-out infinite}
+.blob-b{animation:floatB 14s ease-in-out infinite}
+.blob-c{animation:floatA 17s ease-in-out infinite reverse}
+.blob-spin{animation:spinSlow 60s linear infinite}
+.par{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.blob-img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.tbl{width:100%;border-collapse:collapse;font-size:16px;min-width:520px}
+.tbl th{text-align:left;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8A1043;padding:12px 16px;border-bottom:2px solid #E7A3BF;background:rgba(248,215,229,.55)}
+.tbl td{padding:12px 16px;border-bottom:1px solid #F3C9DA;color:#3B0A24;vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion: reduce){.blob-a,.blob-b,.blob-c,.blob-spin{animation:none}.par{transition:none}}
+</style>
+</head>
+<body>
+<div id="page" style="position: relative; overflow: hidden; min-height: 100vh; background: #FFF1F6; color: #3B0A24; font-family: 'Barlow', system-ui, sans-serif; font-size: 18px; line-height: 1.6;">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0;">
+<div style="position: absolute; top: -60px; right: -80px; width: 520px; max-width: 70vw; opacity: 0.85;">
+<div class="par" data-depth="1.2"><div class="blob-a"><img class="blob-img" src="img/forma-1.webp" alt=""></div></div>
+</div>
+<div style="position: absolute; top: 900px; left: -140px; width: 420px; max-width: 60vw; opacity: 0.55;">
+<div class="par" data-depth="-0.9"><div class="blob-b"><img class="blob-img" src="img/forma-2.webp" alt=""></div></div>
+</div>
+<div style="position: absolute; top: 1750px; right: -120px; width: 460px; max-width: 60vw; opacity: 0.5;">
+<div class="par" data-depth="0.7"><div class="blob-c"><img class="blob-img" src="img/forma-3.webp" alt=""></div></div>
+</div>
+<div style="position: absolute; top: 2650px; left: -100px; width: 380px; max-width: 55vw; opacity: 0.5;">
+<div class="par" data-depth="-1.1"><div class="blob-a"><img class="blob-img" src="img/forma-4.webp" alt=""></div></div>
+</div>
+<div style="position: absolute; top: 3500px; right: -60px; width: 440px; max-width: 60vw; opacity: 0.55;">
+<div class="par" data-depth="0.9"><div class="blob-b"><img class="blob-img" src="img/forma-5.webp" alt=""></div></div>
+</div>
+<div style="position: absolute; top: 420px; left: 46%; width: 140px; opacity: 0.35;">
+<div class="par" data-depth="-1.6"><div class="blob-spin"><img class="blob-img" src="img/forma-4.webp" alt=""></div></div>
+</div>
+</div>
+
+<main style="position: relative; z-index: 1; max-width: 920px; margin: 0 auto; padding: 48px 20px 96px; display: flex; flex-direction: column; gap: 40px;">
+
+<header style="display: flex; flex-direction: column; gap: 28px; padding: 24px 0 32px;">
+<img src="img/citi-rosa.png" alt="CITi" style="height: 56px; width: auto; align-self: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #AD1457;">Desafio de Gente e Gestão 2026.2</p>
+<h1 style="margin: 0; font-size: clamp(44px, 8vw, 88px); line-height: 0.98; font-weight: 800; letter-spacing: -0.02em; color: #5A0A2E;">“Quanto custou o Squad Aurora?”</h1>
+</div>
+</header>
+
+<section style="background: rgba(255,255,255,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 16px; box-shadow: 0 20px 60px rgba(173,20,87,0.10);">
+<h2 style="margin: 0; display: flex; align-items: baseline; gap: 14px; font-size: 34px; font-weight: 800; color: #5A0A2E;"><span style="color: #D81B60;">1.</span> Contexto</h2>
+<p style="margin: 0;">Você acabou de entrar em Gente e Gestão do CITi. O Squad Aurora (equipe pequena formada para tocar um projeto do início ao fim), com 1 gerente de projeto, 5 devs e 2 pessoas de Produto, acabou de entregar um app para um cliente. O projeto foi entregue, mas a pesquisa de clima chegou preocupante. A diretoria pediu a GG que entenda o que aconteceu, inclusive o impacto financeiro, e proponha mudanças.</p>
+<p style="margin: 0; padding: 16px 20px; background: #FCE4EE; border-radius: 16px; font-weight: 500;">Regra combinada no CITi: cada membro se dedica até 6 h por semana ao projeto.</p>
+
+</section>
+
+<section style="background: rgba(255,255,255,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 28px; box-shadow: 0 20px 60px rgba(173,20,87,0.10);">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h2 style="margin: 0; display: flex; align-items: baseline; gap: 14px; font-size: 34px; font-weight: 800; color: #5A0A2E;"><span style="color: #D81B60;">2.</span> Materiais</h2>
+<p style="margin: 0;">Neste desafio, horas extras são as horas reais acima do que estava planejado. A regra de 6 h por semana é a referência combinada para uma carga sustentável.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">2.1 Pesquisa de clima (escala de 1 a 5)</h3>
+<p style="margin: 0;">Escala de 1 a 5, em que 5 é a melhor avaliação.</p>
+<div style="overflow-x: auto; border-radius: 16px; border: 1px solid #F3C9DA; background: rgba(255,255,255,0.7);">
+<table class="tbl">
+<thead><tr><th>Dimensão</th><th class="num">Semestre passado</th><th class="num">Agora</th></tr></thead>
+<tbody>
+<tr><td>Clareza do meu papel no projeto</td><td class="num">4,1</td><td class="num">3,9</td></tr>
+<tr><td>Comunicação com a gerência</td><td class="num">4,0</td><td class="num">3,2</td></tr>
+<tr><td>Me sinto reconhecido(a)</td><td class="num">3,8</td><td class="num">2,6</td></tr>
+<tr><td>Carga de trabalho é sustentável</td><td class="num">3,5</td><td class="num">2,4</td></tr>
+<tr><td>Me sinto parte do CITi</td><td class="num">4,5</td><td class="num">4,3</td></tr>
+<tr><td>Vejo oportunidade de desenvolvimento</td><td class="num">3,9</td><td class="num">3,7</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 16px; color: #7A2A4E;">Participação: 7 de 8 membros.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">Comentários anônimos</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+<blockquote style="margin: 0; padding: 18px 20px; background: #FCE4EE; border-radius: 18px; display: flex; gap: 12px;"><span style="font-weight: 800; color: #D81B60;">1.</span><span>“O cliente muda o escopo toda semana e a gente só fica sabendo na hora de entregar.”</span></blockquote>
+<blockquote style="margin: 0; padding: 18px 20px; background: #FCE4EE; border-radius: 18px; display: flex; gap: 12px;"><span style="font-weight: 800; color: #D81B60;">2.</span><span>“Fiz a madrugada antes da entrega e ninguém comentou nada.”</span></blockquote>
+<blockquote style="margin: 0; padding: 18px 20px; background: #FCE4EE; border-radius: 18px; display: flex; gap: 12px;"><span style="font-weight: 800; color: #D81B60;">3.</span><span>“Gosto muito das pessoas do time, o problema não é com elas.”</span></blockquote>
+<blockquote style="margin: 0; padding: 18px 20px; background: #FCE4EE; border-radius: 18px; display: flex; gap: 12px;"><span style="font-weight: 800; color: #D81B60;">4.</span><span>“Tô pensando se vale a pena continuar no projeto no próximo semestre.”</span></blockquote>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">2.2 Dados do projeto</h3>
+<div style="overflow-x: auto; border-radius: 16px; border: 1px solid #F3C9DA; background: rgba(255,255,255,0.7);">
+<table class="tbl">
+<thead><tr><th>Item</th><th class="num">Planejado</th><th class="num">Real</th></tr></thead>
+<tbody>
+<tr><td>Duração</td><td class="num">8 semanas</td><td class="num">12 semanas</td></tr>
+<tr><td>Horas totais</td><td class="num">300 h</td><td class="num">480 h</td></tr>
+<tr><td>Valor cobrado do cliente</td><td class="num">R$ 12.000</td><td class="num">R$ 12.000</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 16px; color: #7A2A4E;">Para as contas de valor, mantenha o valor da hora do orçamento original do projeto.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">2.3 Mudanças de escopo pedidas pelo cliente</h3>
+<div style="overflow-x: auto; border-radius: 16px; border: 1px solid #F3C9DA; background: rgba(255,255,255,0.7);">
+<table class="tbl">
+<thead><tr><th class="num">#</th><th class="num">Semana</th><th>Mudança</th><th class="num">Horas gastas</th><th>Foi renegociada com o cliente?</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td class="num">3</td><td>Nova tela de cadastro</td><td class="num">30 h</td><td>Não</td></tr>
+<tr><td class="num">2</td><td class="num">4</td><td>Troca da identidade visual</td><td class="num">25 h</td><td>Não</td></tr>
+<tr><td class="num">3</td><td class="num">6</td><td>Integração com pagamento</td><td class="num">60 h</td><td>Não</td></tr>
+<tr><td class="num">4</td><td class="num">8</td><td>Novo fluxo de login</td><td class="num">25 h</td><td>Não</td></tr>
+<tr><td class="num">5</td><td class="num">10</td><td>Relatório em PDF</td><td class="num">40 h</td><td>Não</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 16px; color: #7A2A4E;">Renegociada significa que houve nova cobrança ou novo prazo.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">2.4 Horas por pessoa</h3>
+<p style="margin: 0;">Horas totais de cada pessoa ao longo de todo o projeto.</p>
+<div style="overflow-x: auto; border-radius: 16px; border: 1px solid #F3C9DA; background: rgba(255,255,255,0.7);">
+<table class="tbl">
+<thead><tr><th>Membro</th><th class="num">Planejado</th><th class="num">Real</th></tr></thead>
+<tbody>
+<tr><td>Gerente de projeto</td><td class="num">30 h</td><td class="num">45 h</td></tr>
+<tr><td>Dev A</td><td class="num">45 h</td><td class="num">95 h</td></tr>
+<tr><td>Dev B</td><td class="num">45 h</td><td class="num">90 h</td></tr>
+<tr><td>Dev C</td><td class="num">40 h</td><td class="num">55 h</td></tr>
+<tr><td>Dev D</td><td class="num">40 h</td><td class="num">50 h</td></tr>
+<tr><td>Dev E</td><td class="num">40 h</td><td class="num">45 h</td></tr>
+<tr><td>Produto A</td><td class="num">30 h</td><td class="num">55 h</td></tr>
+<tr><td>Produto B</td><td class="num">30 h</td><td class="num">45 h</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 16px; color: #7A2A4E;">Observação: nas 3 últimas semanas, Dev A e Dev B trabalharam cerca de 15 h por semana cada.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #8A1043;">2.5 Trecho do contrato com o cliente</h3>
+<blockquote style="margin: 0; padding: 20px 24px; background: #5A0A2E; color: #FFE3EE; border-radius: 18px; font-size: 20px; font-style: italic; font-weight: 500;">“Eventuais alterações de escopo serão avaliadas pela equipe do projeto.”</blockquote>
+</div>
+</section>
+
+<section style="background: rgba(255,255,255,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 18px; box-shadow: 0 20px 60px rgba(173,20,87,0.10);">
+<h2 style="margin: 0; display: flex; align-items: baseline; gap: 14px; font-size: 34px; font-weight: 800; color: #5A0A2E;"><span style="color: #D81B60;">3.</span> O que você entrega</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+<div style="padding: 18px 20px; background: #FCE4EE; border-radius: 18px;"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #AD1457;">Formato</p><p style="margin: 0;">Um único arquivo, em documento (Word ou Google Docs exportado em PDF) ou em slides (PDF).</p></div>
+<div style="padding: 18px 20px; background: #FCE4EE; border-radius: 18px;"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #AD1457;">Tamanho máximo</p><p style="margin: 0;">Documento de até 4 páginas ou até 8 slides, sem contar um apêndice opcional com as contas.</p></div>
+</div>
+<p style="margin: 0; font-weight: 600;">O entregável deve conter, nesta ordem:</p>
+<ol start="0" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">0</span><span><strong>Resumo para a diretoria:</strong> até 5 linhas com o que aconteceu, quanto custou e o que você recomenda.</span></li>
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">1</span><span><strong>Diagnóstico do clima:</strong> os principais problemas do time e quais dados sustentam cada um deles.</span></li>
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">2</span><span><strong>A conta:</strong> quanto o projeto deveria ter sido cobrado considerando as horas reais, e quanto foi cobrado de fato. Mostre o passo a passo em uma tabela com “cálculo” e “resultado”, para que seja possível conferir seu raciocínio. Essa parte pode ficar no apêndice.</span></li>
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">3</span><span><strong>Quem pagou a conta:</strong> como as horas extras se distribuíram entre as pessoas do time e como isso aparece na pesquisa de clima.</span></li>
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">4</span><span><strong>Plano de ação:</strong> de 3 a 4 ações, em uma tabela com as colunas ação, problema que resolve (pessoas, financeiro ou ambos), responsável e prazo aproximado. Indique, em uma frase, qual é a ação prioritária e por quê.</span></li>
+<li style="display: flex; gap: 16px; padding: 16px 20px; border: 1px solid #F3C9DA; border-radius: 18px; background: rgba(255,255,255,0.7);"><span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #D81B60; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center;">5</span><span><strong>Uma conversa:</strong> você fará um 1:1 com cada membro do squad. Descreva como conduziria a conversa com quem está pensando em sair do projeto (comentário 4), sem tentar descobrir quem escreveu e sem expor a pesquisa. Inclua como você abriria a conversa, de 3 a 4 perguntas que faria e o que faria com o que ouvir.</span></li>
+</ol>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+<section style="background: #5A0A2E; color: #FFE3EE; border-radius: 28px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px;">
+<h2 style="margin: 0; display: flex; align-items: baseline; gap: 14px; font-size: 30px; font-weight: 800; color: #FFFFFF;"><span style="color: #FF8AB8;">4.</span> Regras de entrega</h2>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+<li><strong style="color: #FFFFFF;">Prazo de envio:</strong> 31/10/2026 (sábado) às 23:59</li>
+<li><strong style="color: #FFFFFF;">Como enviar:</strong> PDF pelo formulário <a href="https://forms.gle/Djehh55xj36ZYacK7" style="color: #FFB3D1; word-break: break-all;">https://forms.gle/Djehh55xj36ZYacK7</a></li>
+<li><strong style="color: #FFFFFF;">Nome do arquivo:</strong> “Nome Sobrenome - Desafio GG PTC 26.2”</li>
+<li>O trabalho é individual.</li>
+<li>Você pode usar ferramentas de apoio, como planilha ou IA, mas é responsável por conferir e entender cada cálculo e cada afirmação.</li>
+</ul>
+</section>
+<section style="background: rgba(255,255,255,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 28px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px; box-shadow: 0 20px 60px rgba(173,20,87,0.10);">
+<h2 style="margin: 0; display: flex; align-items: baseline; gap: 14px; font-size: 30px; font-weight: 800; color: #5A0A2E;"><span style="color: #D81B60;">5.</span> Como você será avaliado(a)</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px;">
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Leitura do clima</li>
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Contas e leitura financeira</li>
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Conexão entre clima e financeiro</li>
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Viabilidade das ações</li>
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Empatia e ética</li>
+<li style="padding: 8px 16px; border-radius: 999px; background: #FCE4EE; color: #8A1043; font-weight: 600;">Clareza da comunicação escrita</li>
+</ul>
+</section>
+</div>
+
+</main>
+</div>
+<script>
+(function () {
+  var page = document.getElementById('page');
+  var layers = page.querySelectorAll('.par');
+  var amt = 40;
+  function move(mx, my) {
+    layers.forEach(function (el) {
+      var d = parseFloat(el.dataset.depth);
+      el.style.transform = 'translate(' + (mx * amt * d).toFixed(1) + 'px, ' + (my * amt * d).toFixed(1) + 'px)';
+    });
+  }
+  page.addEventListener('mousemove', function (e) {
+    var r = page.getBoundingClientRect();
+    move((e.clientX - r.left) / r.width - 0.5, e.clientY / window.innerHeight - 0.5);
+  });
+  page.addEventListener('mouseleave', function () { move(0, 0); });
+})();
+</script>
+</body>
+</html>
